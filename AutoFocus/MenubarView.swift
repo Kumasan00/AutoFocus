@@ -1,36 +1,37 @@
 import SwiftUI
 
 struct MenubarView: View {
-    @AppStorage(UserDefaults.Keys.isRun) private var isRun: Bool = true
+  @AppStorage(UserDefaults.Keys.isRun)
+  private var isRun: Bool = true
 
-    var body: some View {
-        VStack(spacing: 4) {
-            Button {
-                isRun.toggle()
-            } label: {
-                Text(isRun ? "stop" : "start")
-                    .frame(maxWidth: .infinity)
-            }
+  var body: some View {
+    VStack(spacing: 4) {
+      Button {
+        isRun.toggle()
+      } label: {
+        Text(isRun ? "stop" : "start")
+          .frame(maxWidth: .infinity)
+      }
 
-            Divider()
+      Divider()
 
-            SettingsLink {
-                Text("open settings")
-                    .frame(maxWidth: .infinity)
-            }
-            .keyboardShortcut(",", modifiers: .command)
+      SettingsLink {
+        Text("open settings")
+          .frame(maxWidth: .infinity)
+      }
+      .keyboardShortcut(",", modifiers: .command)
 
-            Divider()
+      Divider()
 
-            Button {
-                NSApplication.shared.terminate(nil)
-            } label: {
-                Text("quit")
-                    .frame(maxWidth: .infinity)
-            }
-            .keyboardShortcut("q", modifiers: .command)
-        }
-        .frame(width: 160)
-        .padding(8)
+      Button {
+        NSApplication.shared.terminate(nil)
+      } label: {
+        Text("quit")
+          .frame(maxWidth: .infinity)
+      }
+      .keyboardShortcut("q", modifiers: .command)
     }
+    .frame(width: 160)
+    .padding(8)
+  }
 }

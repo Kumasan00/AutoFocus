@@ -1,0 +1,4 @@
+--swiftversion 6
+--indent 2
+--allman false
+--extension-acl on-declarations

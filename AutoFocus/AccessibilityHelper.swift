@@ -3,8 +3,6 @@ import Cocoa
 
 // MARK: - Accessibility Logic
 
-let AccessibilityHelper = ""
-
 enum AXError: Error {
   case apiError(String)
   case elementNotFound
